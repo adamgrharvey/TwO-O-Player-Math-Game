@@ -52,22 +52,23 @@ class Game_Loop
     
   end
 
+  def change_player
+    if @curr_player == @player1
+      @curr_player = @player2
+    elsif 
+      @curr_player = @player1
+    end
+  end
+
   def is_right
     puts "Correct!"
-   if @curr_player == @player1
-    @curr_player = @player2
-   elsif 
-    @curr_player = @player1
-   end
+    change_player
   end
 
   def is_wrong
     puts "Wrong!"
     @curr_player.remove_life
-   if @curr_player == @player1
-    @curr_player = @player2
-   elsif 
-    @curr_player = @player1
-   end
+    change_player
   end
+  
 end
