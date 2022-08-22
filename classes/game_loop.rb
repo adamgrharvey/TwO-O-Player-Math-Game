@@ -45,9 +45,12 @@ class Game_Loop
     @curr_player.add_question(question.q1, question.q2)
     @curr_player.add_answer(given_answer)
    if question.answer == given_answer
-    is_right
+    puts "Correct!"
+    change_player
    elsif 
-    is_wrong
+    puts "Wrong!"
+    @curr_player.remove_life
+    change_player
    end
     
   end
@@ -59,16 +62,4 @@ class Game_Loop
       @curr_player = @player1
     end
   end
-
-  def is_right
-    puts "Correct!"
-    change_player
-  end
-
-  def is_wrong
-    puts "Wrong!"
-    @curr_player.remove_life
-    change_player
-  end
-  
 end
