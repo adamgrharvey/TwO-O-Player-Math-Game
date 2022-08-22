@@ -36,7 +36,7 @@ class Game_Loop
    elsif 
     winner = @player1
    end
-   puts "#{winner.name} wins! They answered #{winner.answers.length() - winner.lives + winner.max_lives} questions right! They had #{winner.lives}/#{winner.max_lives} lives left."
+   puts "#{winner.name} wins! They answered #{winner.answers.length() - (winner.max_lives - winner.lives)} questions right! They had #{winner.lives}/#{winner.max_lives} lives left."
    puts "----- GAME OVER -----"
    puts "Good bye!"
   end
